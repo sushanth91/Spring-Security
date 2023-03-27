@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="card-body">
+            <h3>Login Here</h3>
+            <div class="row d-flex align-items-center justify-content-center h-100">
+                <div class="col-md-8 col-lg-7 col-xl-6">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                    class="img-fluid" alt="Phone image"   width="400"
+                         height="500">
+                </div>
+            <form th:action="@{/dologin}" method="post">
+                <div th:if="${param.error}" class="text-danger">
+                    Invalid Username OR Password
+                     </div>
+                <div class="mb-3">
+                    <label for ="exampleInputEmail" class="form-label">Username</label>
+                    <input name="username" type="text" class="form-control" id="exampleInputEmail"
+                           aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for ="exampleInputPassword1" class="form-label">Password</label>
+                <input name="password" type="text" class="form-control" id="exampleInputPassword1"
+                       aria-describedby="emailHelp">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+
+</body>
+</html>
